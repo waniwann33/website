@@ -245,13 +245,55 @@
             margin:20px 0;
         }
 
-        .modal-image{
+        /* Gallery Styles */
+        .gallery-container{
+            margin-bottom:20px;
+        }
+
+        .gallery-main{
+            position:relative;
             width:100%;
             border-radius:10px;
-            margin-bottom:20px;
+            overflow:hidden;
+            margin-bottom:15px;
+        }
+
+        .gallery-main img{
+            width:100%;
             max-height:400px;
             object-fit:cover;
-            background:#f0f0f0;
+            display:block;
+        }
+
+        .gallery-thumbnails{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(80px,1fr));
+            gap:10px;
+        }
+
+        .gallery-thumbnail{
+            cursor:pointer;
+            border-radius:8px;
+            overflow:hidden;
+            border:3px solid #ddd;
+            transition:all 0.3s ease;
+        }
+
+        .gallery-thumbnail img{
+            width:100%;
+            height:80px;
+            object-fit:cover;
+            display:block;
+        }
+
+        .gallery-thumbnail:hover{
+            border-color:#1e3a8a;
+            transform:scale(1.05);
+        }
+
+        .gallery-thumbnail.active{
+            border-color:#1e3a8a;
+            box-shadow:0 0 8px rgba(30,58,138,0.5);
         }
 
         .modal-section{
@@ -437,7 +479,7 @@
         </section>
     </div>
 
-    <!-- Modal untuk Project 1 -->
+    <!-- Modal untuk Project 1 - Ratu Nego dengan Galeri -->
     <div id="modal1" class="modal" onclick="closeModal(1)">
         <div class="modal-content" onclick="event.stopPropagation()">
             <div class="modal-header">
@@ -445,10 +487,25 @@
                 <button class="close-btn" onclick="closeModal(1)">&times;</button>
             </div>
             <div class="modal-body">
-                <img src="project1-foto.jpg" alt="Ratu Nego" class="modal-image">
+                <div class="gallery-container">
+                    <div class="gallery-main">
+                        <img id="mainImage1" src="project1-foto1.jpg" alt="Ratu Nego">
+                    </div>
+                    <div class="gallery-thumbnails">
+                        <div class="gallery-thumbnail active" onclick="changeImage(1, 'project1-foto1.jpg', this)">
+                            <img src="project1-foto1.jpg" alt="Foto 1">
+                        </div>
+                        <div class="gallery-thumbnail" onclick="changeImage(1, 'project1-foto2.jpg', this)">
+                            <img src="project1-foto2.jpg" alt="Foto 2">
+                        </div>
+                        <div class="gallery-thumbnail" onclick="changeImage(1, 'project1-foto3.jpg', this)">
+                            <img src="project1-foto3.jpg" alt="Foto 3">
+                        </div>
+                    </div>
+                </div>
                 <div class="modal-section">
                     <h3>Deskripsi</h3>
-                    <p>Film pendek yang diproduksi untuk menyelesaikan tugas Bahasa Indonesia dengan materi negosiasi. Project ini menampilkan sebuah scenario negosiasi yang menarik.</p>
+                    <p>Film pendek yang diproduksi untuk menyelesaikan tugas Bahasa Indonesia dengan materi negosiasi. Project ini menampilkan sebuah scenario negosiasi yang menarik dengan tim yang solid.</p>
                 </div>
                 <div class="modal-section">
                     <h3>Informasi</h3>
@@ -472,7 +529,7 @@
                 <button class="close-btn" onclick="closeModal(2)">&times;</button>
             </div>
             <div class="modal-body">
-                <img src="project2-foto.jpg" alt="Siswa Transparan" class="modal-image">
+                <img src="project2-foto.jpg" alt="Siswa Transparan" style="width:100%; border-radius:10px; margin-bottom:20px;">
                 <div class="modal-section">
                     <h3>Deskripsi</h3>
                     <p>Film pendek yang diproduksi untuk menyelesaikan tugas DDBP (Dasar-Dasar Broadcasting & Perfilman). Mengeksplorasi konsep transparansi dalam konteks kehidupan siswa.</p>
@@ -499,7 +556,7 @@
                 <button class="close-btn" onclick="closeModal(3)">&times;</button>
             </div>
             <div class="modal-body">
-                <img src="project3-foto.jpg" alt="ARABIKA" class="modal-image">
+                <img src="project3-foto.jpg" alt="ARABIKA" style="width:100%; border-radius:10px; margin-bottom:20px;">
                 <div class="modal-section">
                     <h3>Deskripsi</h3>
                     <p>Talk Show yang diproduksi untuk menyelesaikan tugas uji kompetensi semester 2. Membahas berbagai topik menarik dengan pembicara tamu yang berpengalaman.</p>
@@ -526,7 +583,7 @@
                 <button class="close-btn" onclick="closeModal(4)">&times;</button>
             </div>
             <div class="modal-body">
-                <img src="project4-foto.jpg" alt="UJIAN" class="modal-image">
+                <img src="project4-foto.jpg" alt="UJIAN" style="width:100%; border-radius:10px; margin-bottom:20px;">
                 <div class="modal-section">
                     <h3>Deskripsi</h3>
                     <p>Variety Show yang diproduksi untuk menyelesaikan tugas uji kompetensi semester 3. Menampilkan berbagai hiburan dan konten yang menghibur dan mendidik.</p>
@@ -553,7 +610,7 @@
                 <button class="close-btn" onclick="closeModal(5)">&times;</button>
             </div>
             <div class="modal-body">
-                <img src="project5-foto.jpg" alt="RONA" class="modal-image">
+                <img src="project5-foto.jpg" alt="RONA" style="width:100%; border-radius:10px; margin-bottom:20px;">
                 <div class="modal-section">
                     <h3>Deskripsi</h3>
                     <p>Film pendek yang diproduksi untuk mengikuti ajang perlombaan FLS3N (Festival Lomba Seni Siswa Nasional) di bidang film pendek. Project ini menampilkan karya berkualitas tinggi.</p>
@@ -580,7 +637,7 @@
                 <button class="close-btn" onclick="closeModal(6)">&times;</button>
             </div>
             <div class="modal-body">
-                <img src="project6-foto.jpg" alt="Alam Tak Berbicara" class="modal-image">
+                <img src="project6-foto.jpg" alt="Alam Tak Berbicara" style="width:100%; border-radius:10px; margin-bottom:20px;">
                 <div class="modal-section">
                     <h3>Deskripsi</h3>
                     <p>Film pendek yang diproduksi untuk mengikuti ajang perlombaan BINTANG 10 di bidang film pendek. Film ini mengangkat tema tentang keindahan alam.</p>
@@ -607,7 +664,7 @@
                 <button class="close-btn" onclick="closeModal(7)">&times;</button>
             </div>
             <div class="modal-body">
-                <img src="project7-foto.jpg" alt="Prisma" class="modal-image">
+                <img src="project7-foto.jpg" alt="Prisma" style="width:100%; border-radius:10px; margin-bottom:20px;">
                 <div class="modal-section">
                     <h3>Deskripsi</h3>
                     <p>Film Pendek yang diproduksi untuk mengikuti ajang perlombaan dari HIMA PEDIA UPI dengan nama event "PEDITION 2026". Sebuah kolaborasi dengan universitas terkemuka.</p>
@@ -642,6 +699,19 @@
             const modal = document.getElementById('modal' + projectNumber);
             modal.classList.remove('active');
             document.body.style.overflow = 'auto';
+        }
+
+        function changeImage(projectNumber, imageSrc, thumbnailElement) {
+            // Update main image
+            const mainImage = document.getElementById('mainImage' + projectNumber);
+            if (mainImage) {
+                mainImage.src = imageSrc;
+            }
+            
+            // Update active thumbnail
+            const allThumbnails = document.querySelectorAll(`#modal${projectNumber} .gallery-thumbnail`);
+            allThumbnails.forEach(thumb => thumb.classList.remove('active'));
+            thumbnailElement.classList.add('active');
         }
 
         // Close modal ketika tekan ESC
