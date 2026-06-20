@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Irwansyah</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f5f7fa;
+            color:#333;
+        }
+
+        header{
+            background:#1e3a8a;
+            padding:15px;
+        }
+
+        nav{
+            display:flex;
+            justify-content:center;
+            gap:20px;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            font-weight:bold;
+        }
+
+        nav a:hover{
+            text-decoration:underline;
+        }
+
+        .container{
+            width:90%;
+            max-width:1000px;
+            margin:auto;
+            padding:40px 20px;
+        }
+
+        .card{
+            background:white;
+            padding:25px;
+            border-radius:12px;
+            box-shadow:0 2px 10px rgba(0,0,0,.1);
+            margin-bottom:20px;
+        }
+
+        h1,h2{
+            color:#1e3a8a;
+            margin-bottom:15px;
+        }
+
+        .profile{
+            text-align:center;
+        }
+
+        .profile img{
+            width:180px;
+            height:180px;
+            border-radius:50%;
+            object-fit:cover;
+            margin-bottom:15px;
+            border:4px solid #1e3a8a;
+        }
+
+        .profile h1{
+            font-size:2.5em;
+            margin-bottom:10px;
+        }
+
+        .profile .subtitle{
+            font-size:1.2em;
+            color:#666;
+            margin-bottom:10px;
+        }
+
+        .profile .jurusan{
+            font-size:1em;
+            color:#1e3a8a;
+            font-weight:bold;
+            margin-bottom:15px;
+        }
+
+        .grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:20px;
+        }
+
+        .skill{
+            background:#dbeafe;
+            padding:20px;
+            border-radius:10px;
+            text-align:center;
+        }
+
+        .skill h3{
+            color:#1e3a8a;
+            margin-bottom:10px;
+        }
+
+        .skill-percentage{
+            font-size:1.5em;
+            font-weight:bold;
+            color:#1e3a8a;
+            margin-bottom:10px;
+        }
+
+        .progress-bar{
+            background:#ccc;
+            height:10px;
+            border-radius:5px;
+            overflow:hidden;
+            margin-top:10px;
+        }
+
+        .progress-fill{
+            background:#1e3a8a;
+            height:100%;
+            border-radius:5px;
+        }
+
+        .project-item{
+            background:#f9f9f9;
+            padding:20px;
+            border-radius:10px;
+            border-left:4px solid #1e3a8a;
+            margin-bottom:15px;
+        }
+
+        .project-item h3{
+            color:#1e3a8a;
+            margin-bottom:8px;
+        }
+
+        .project-item .deskripsi{
+            margin:8px 0;
+            color:#666;
+        }
+
+        .project-item .divisi{
+            color:#1e3a8a;
+            font-weight:bold;
+            margin-top:10px;
+        }
+
+        .contact-item{
+            margin-bottom:15px;
+            padding:15px;
+            background:#f9f9f9;
+            border-radius:8px;
+        }
+
+        .contact-item strong{
+            color:#1e3a8a;
+        }
+
+        .contact-item a{
+            color:#1e3a8a;
+            text-decoration:none;
+        }
+
+        .contact-item a:hover{
+            text-decoration:underline;
+        }
+
+        footer{
+            text-align:center;
+            padding:20px;
+            margin-top:30px;
+            background:#1e3a8a;
+            color:white;
+            border-radius:12px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#profile">Profile</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Profile Section -->
+        <section id="profile" class="card profile">
+            <img src="https://via.placeholder.com/180" alt="Profile Picture Irwansyah">
+            <h1>Irwansyah</h1>
+            <p class="subtitle">SMKN 1 Katapang</p>
+            <p class="jurusan">Broadcasting dan Perfilman</p>
+            <p>Seorang siswa berbakat dari SMKN 1 Katapang dengan fokus pada Broadcasting dan Perfilman. Memiliki passion dalam scriptwriting, artistik, dan kreativitas dalam menghasilkan karya visual yang berkualitas.</p>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="card">
+            <h2>Skills</h2>
+            <div class="grid">
+                <div class="skill">
+                    <h3>Scriptwriter</h3>
+                    <div class="skill-percentage">88%</div>
+                    <p>Ahli dalam menulis naskah berkualitas untuk berbagai format produksi</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width:88%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <h3>Artistik</h3>
+                    <div class="skill-percentage">87%</div>
+                    <p>Berpengalaman dalam aspek artistik dan visual produksi</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width:87%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <h3>Kreatif</h3>
+                    <div class="skill-percentage">86%</div>
+                    <p>Ide-ide kreatif dan inovatif dalam setiap project</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width:86%;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="card">
+            <h2>Projects</h2>
+            
+            <div class="project-item">
+                <h3>1. Ratu Nego</h3>
+                <p class="deskripsi"><strong>Tujuan:</strong> Menyelesaikan tugas Bahasa Indonesia materi negosiasi</p>
+                <p class="divisi"><strong>Divisi:</strong> Kreatif, Artistik, dan Talent</p>
+            </div>
+
+            <div class="project-item">
+                <h3>2. Siswa Transparan</h3>
+                <p class="deskripsi"><strong>Tujuan:</strong> Menyelesaikan tugas DDBP (Dasar-Dasar Broadcasting & Perfilman)</p>
+                <p class="divisi"><strong>Divisi:</strong> Artistik dan Talent</p>
+            </div>
+
+            <div class="project-item">
+                <h3>3. ARABIKA (Arah Bicara Kita)</h3>
+                <p class="deskripsi"><strong>Format:</strong> Talk Show</p>
+                <p class="deskripsi"><strong>Tujuan:</strong> Menyelesaikan tugas uji kompetensi semester 2</p>
+                <p class="divisi"><strong>Divisi:</strong> Scriptwriter</p>
+            </div>
+
+            <div class="project-item">
+                <h3>4. UJIAN (Uji Jiwa AnakNegeri)</h3>
+                <p class="deskripsi"><strong>Format:</strong> Variety Show</p>
+                <p class="deskripsi"><strong>Tujuan:</strong> Menyelesaikan tugas uji kompetensi semester 3</p>
+                <p class="divisi"><strong>Divisi:</strong> Scriptwriter</p>
+            </div>
+
+            <div class="project-item">
+                <h3>5. RONA</h3>
+                <p class="deskripsi"><strong>Tujuan:</strong> Mengikuti ajang perlombaan "FLS3N" di bidang film pendek</p>
+                <p class="divisi"><strong>Divisi:</strong> Artistik dan Logistik</p>
+            </div>
+
+            <div class="project-item">
+                <h3>6. Alam Tak Berbicara</h3>
+                <p class="deskripsi"><strong>Tujuan:</strong> Mengikuti ajang perlombaan "BINTANG 10" di bidang film pendek</p>
+                <p class="divisi"><strong>Divisi:</strong> Artistik</p>
+            </div>
+
+            <div class="project-item">
+                <h3>7. Prisma</h3>
+                <p class="deskripsi"><strong>Tujuan:</strong> Mengikuti ajang perlombaan dari "HIMA PEDIA UPI" dengan event "PEDITION 2026"</p>
+                <p class="divisi"><strong>Divisi:</strong> Artistik, Gaffer, dan Direct Assist</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="card">
+            <h2>Contact</h2>
+            
+            <div class="contact-item">
+                <strong>📧 Email:</strong> akuirwan80@gmail.com
+            </div>
+
+            <div class="contact-item">
+                <strong>📱 WhatsApp:</strong> <a href="https://wa.me/6285722756549">+62 857 2275 6549</a>
+            </div>
+
+            <div class="contact-item">
+                <strong>📷 Instagram:</strong> <a href="https://instagram.com/wann13n_">@wann13n_</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 - Irwansyah Portfolio. All rights reserved.</p>
+    </footer>
+</body>
+</html>
