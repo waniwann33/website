@@ -134,6 +134,14 @@
             border-radius:10px;
             border-left:4px solid #1e3a8a;
             margin-bottom:15px;
+            cursor:pointer;
+            transition:all 0.3s ease;
+        }
+
+        .project-item:hover{
+            background:#e8f0ff;
+            transform:translateX(5px);
+            box-shadow:0 4px 12px rgba(30,58,138,0.2);
         }
 
         .project-item h3{
@@ -150,6 +158,126 @@
             color:#1e3a8a;
             font-weight:bold;
             margin-top:10px;
+        }
+
+        .project-item .click-info{
+            color:#999;
+            font-size:0.9em;
+            margin-top:10px;
+            font-style:italic;
+        }
+
+        /* Modal Styles */
+        .modal{
+            display:none;
+            position:fixed;
+            z-index:1000;
+            left:0;
+            top:0;
+            width:100%;
+            height:100%;
+            background-color:rgba(0,0,0,0.5);
+            animation:fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn{
+            from{opacity:0;}
+            to{opacity:1;}
+        }
+
+        .modal.active{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+
+        .modal-content{
+            background:white;
+            padding:40px;
+            border-radius:15px;
+            max-width:600px;
+            width:90%;
+            max-height:80vh;
+            overflow-y:auto;
+            animation:slideIn 0.3s ease;
+            box-shadow:0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        @keyframes slideIn{
+            from{
+                transform:translateY(-50px);
+                opacity:0;
+            }
+            to{
+                transform:translateY(0);
+                opacity:1;
+            }
+        }
+
+        .modal-header{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            margin-bottom:20px;
+            border-bottom:2px solid #1e3a8a;
+            padding-bottom:15px;
+        }
+
+        .modal-header h2{
+            margin:0;
+            color:#1e3a8a;
+        }
+
+        .close-btn{
+            background:none;
+            border:none;
+            font-size:28px;
+            cursor:pointer;
+            color:#1e3a8a;
+            font-weight:bold;
+        }
+
+        .close-btn:hover{
+            color:#ff6b6b;
+        }
+
+        .modal-body{
+            margin:20px 0;
+        }
+
+        .modal-image{
+            width:100%;
+            border-radius:10px;
+            margin-bottom:20px;
+            max-height:400px;
+            object-fit:cover;
+            background:#f0f0f0;
+        }
+
+        .modal-section{
+            margin-bottom:20px;
+        }
+
+        .modal-section h3{
+            color:#1e3a8a;
+            margin-bottom:10px;
+            font-size:1.1em;
+        }
+
+        .modal-section p{
+            color:#666;
+            line-height:1.6;
+        }
+
+        .divisi-list{
+            background:#dbeafe;
+            padding:15px;
+            border-radius:8px;
+            margin-top:10px;
+        }
+
+        .divisi-list strong{
+            color:#1e3a8a;
         }
 
         .contact-item{
@@ -239,48 +367,55 @@
         <section id="projects" class="card">
             <h2>Projects</h2>
             
-            <div class="project-item">
+            <div class="project-item" onclick="openModal(1)">
                 <h3>1. Ratu Nego</h3>
                 <p class="deskripsi"><strong>Tujuan:</strong> Menyelesaikan tugas Bahasa Indonesia materi negosiasi</p>
                 <p class="divisi"><strong>Divisi:</strong> Kreatif, Artistik, dan Talent</p>
+                <p class="click-info">👆 Klik untuk melihat dokumentasi</p>
             </div>
 
-            <div class="project-item">
+            <div class="project-item" onclick="openModal(2)">
                 <h3>2. Siswa Transparan</h3>
                 <p class="deskripsi"><strong>Tujuan:</strong> Menyelesaikan tugas DDBP (Dasar-Dasar Broadcasting & Perfilman)</p>
                 <p class="divisi"><strong>Divisi:</strong> Artistik dan Talent</p>
+                <p class="click-info">👆 Klik untuk melihat dokumentasi</p>
             </div>
 
-            <div class="project-item">
+            <div class="project-item" onclick="openModal(3)">
                 <h3>3. ARABIKA (Arah Bicara Kita)</h3>
                 <p class="deskripsi"><strong>Format:</strong> Talk Show</p>
                 <p class="deskripsi"><strong>Tujuan:</strong> Menyelesaikan tugas uji kompetensi semester 2</p>
                 <p class="divisi"><strong>Divisi:</strong> Scriptwriter</p>
+                <p class="click-info">👆 Klik untuk melihat dokumentasi</p>
             </div>
 
-            <div class="project-item">
+            <div class="project-item" onclick="openModal(4)">
                 <h3>4. UJIAN (Uji Jiwa AnakNegeri)</h3>
                 <p class="deskripsi"><strong>Format:</strong> Variety Show</p>
                 <p class="deskripsi"><strong>Tujuan:</strong> Menyelesaikan tugas uji kompetensi semester 3</p>
                 <p class="divisi"><strong>Divisi:</strong> Scriptwriter</p>
+                <p class="click-info">👆 Klik untuk melihat dokumentasi</p>
             </div>
 
-            <div class="project-item">
+            <div class="project-item" onclick="openModal(5)">
                 <h3>5. RONA</h3>
                 <p class="deskripsi"><strong>Tujuan:</strong> Mengikuti ajang perlombaan "FLS3N" di bidang film pendek</p>
                 <p class="divisi"><strong>Divisi:</strong> Artistik dan Logistik</p>
+                <p class="click-info">👆 Klik untuk melihat dokumentasi</p>
             </div>
 
-            <div class="project-item">
+            <div class="project-item" onclick="openModal(6)">
                 <h3>6. Alam Tak Berbicara</h3>
                 <p class="deskripsi"><strong>Tujuan:</strong> Mengikuti ajang perlombaan "BINTANG 10" di bidang film pendek</p>
                 <p class="divisi"><strong>Divisi:</strong> Artistik</p>
+                <p class="click-info">👆 Klik untuk melihat dokumentasi</p>
             </div>
 
-            <div class="project-item">
+            <div class="project-item" onclick="openModal(7)">
                 <h3>7. Prisma</h3>
                 <p class="deskripsi"><strong>Tujuan:</strong> Mengikuti ajang perlombaan dari "HIMA PEDIA UPI" dengan event "PEDITION 2026"</p>
                 <p class="divisi"><strong>Divisi:</strong> Artistik, Gaffer, dan Direct Assist</p>
+                <p class="click-info">👆 Klik untuk melihat dokumentasi</p>
             </div>
         </section>
 
@@ -302,9 +437,221 @@
         </section>
     </div>
 
+    <!-- Modal untuk Project 1 -->
+    <div id="modal1" class="modal" onclick="closeModal(1)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2>Ratu Nego</h2>
+                <button class="close-btn" onclick="closeModal(1)">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img src="project1-foto.jpg" alt="Ratu Nego" class="modal-image">
+                <div class="modal-section">
+                    <h3>Deskripsi</h3>
+                    <p>Film pendek yang diproduksi untuk menyelesaikan tugas Bahasa Indonesia dengan materi negosiasi. Project ini menampilkan sebuah scenario negosiasi yang menarik.</p>
+                </div>
+                <div class="modal-section">
+                    <h3>Informasi</h3>
+                    <p><strong>Tahun:</strong> [Edit tahun]</p>
+                    <p><strong>Durasi:</strong> [Edit durasi]</p>
+                    <p><strong>Status:</strong> Selesai</p>
+                </div>
+                <div class="divisi-list">
+                    <strong>Divisi yang Terlibat:</strong>
+                    <p>✓ Kreatif<br>✓ Artistik<br>✓ Talent</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal untuk Project 2 -->
+    <div id="modal2" class="modal" onclick="closeModal(2)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2>Siswa Transparan</h2>
+                <button class="close-btn" onclick="closeModal(2)">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img src="project2-foto.jpg" alt="Siswa Transparan" class="modal-image">
+                <div class="modal-section">
+                    <h3>Deskripsi</h3>
+                    <p>Film pendek yang diproduksi untuk menyelesaikan tugas DDBP (Dasar-Dasar Broadcasting & Perfilman). Mengeksplorasi konsep transparansi dalam konteks kehidupan siswa.</p>
+                </div>
+                <div class="modal-section">
+                    <h3>Informasi</h3>
+                    <p><strong>Tahun:</strong> [Edit tahun]</p>
+                    <p><strong>Durasi:</strong> [Edit durasi]</p>
+                    <p><strong>Status:</strong> Selesai</p>
+                </div>
+                <div class="divisi-list">
+                    <strong>Divisi yang Terlibat:</strong>
+                    <p>✓ Artistik<br>✓ Talent</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal untuk Project 3 -->
+    <div id="modal3" class="modal" onclick="closeModal(3)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2>ARABIKA (Arah Bicara Kita)</h2>
+                <button class="close-btn" onclick="closeModal(3)">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img src="project3-foto.jpg" alt="ARABIKA" class="modal-image">
+                <div class="modal-section">
+                    <h3>Deskripsi</h3>
+                    <p>Talk Show yang diproduksi untuk menyelesaikan tugas uji kompetensi semester 2. Membahas berbagai topik menarik dengan pembicara tamu yang berpengalaman.</p>
+                </div>
+                <div class="modal-section">
+                    <h3>Informasi</h3>
+                    <p><strong>Tahun:</strong> [Edit tahun]</p>
+                    <p><strong>Format:</strong> Talk Show</p>
+                    <p><strong>Status:</strong> Selesai</p>
+                </div>
+                <div class="divisi-list">
+                    <strong>Divisi yang Terlibat:</strong>
+                    <p>✓ Scriptwriter</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal untuk Project 4 -->
+    <div id="modal4" class="modal" onclick="closeModal(4)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2>UJIAN (Uji Jiwa AnakNegeri)</h2>
+                <button class="close-btn" onclick="closeModal(4)">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img src="project4-foto.jpg" alt="UJIAN" class="modal-image">
+                <div class="modal-section">
+                    <h3>Deskripsi</h3>
+                    <p>Variety Show yang diproduksi untuk menyelesaikan tugas uji kompetensi semester 3. Menampilkan berbagai hiburan dan konten yang menghibur dan mendidik.</p>
+                </div>
+                <div class="modal-section">
+                    <h3>Informasi</h3>
+                    <p><strong>Tahun:</strong> [Edit tahun]</p>
+                    <p><strong>Format:</strong> Variety Show</p>
+                    <p><strong>Status:</strong> Selesai</p>
+                </div>
+                <div class="divisi-list">
+                    <strong>Divisi yang Terlibat:</strong>
+                    <p>✓ Scriptwriter</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal untuk Project 5 -->
+    <div id="modal5" class="modal" onclick="closeModal(5)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2>RONA</h2>
+                <button class="close-btn" onclick="closeModal(5)">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img src="project5-foto.jpg" alt="RONA" class="modal-image">
+                <div class="modal-section">
+                    <h3>Deskripsi</h3>
+                    <p>Film pendek yang diproduksi untuk mengikuti ajang perlombaan FLS3N (Festival Lomba Seni Siswa Nasional) di bidang film pendek. Project ini menampilkan karya berkualitas tinggi.</p>
+                </div>
+                <div class="modal-section">
+                    <h3>Informasi</h3>
+                    <p><strong>Tahun:</strong> [Edit tahun]</p>
+                    <p><strong>Event:</strong> FLS3N</p>
+                    <p><strong>Status:</strong> Submitted</p>
+                </div>
+                <div class="divisi-list">
+                    <strong>Divisi yang Terlibat:</strong>
+                    <p>✓ Artistik<br>✓ Logistik</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal untuk Project 6 -->
+    <div id="modal6" class="modal" onclick="closeModal(6)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2>Alam Tak Berbicara</h2>
+                <button class="close-btn" onclick="closeModal(6)">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img src="project6-foto.jpg" alt="Alam Tak Berbicara" class="modal-image">
+                <div class="modal-section">
+                    <h3>Deskripsi</h3>
+                    <p>Film pendek yang diproduksi untuk mengikuti ajang perlombaan BINTANG 10 di bidang film pendek. Film ini mengangkat tema tentang keindahan alam.</p>
+                </div>
+                <div class="modal-section">
+                    <h3>Informasi</h3>
+                    <p><strong>Tahun:</strong> [Edit tahun]</p>
+                    <p><strong>Event:</strong> BINTANG 10</p>
+                    <p><strong>Status:</strong> Submitted</p>
+                </div>
+                <div class="divisi-list">
+                    <strong>Divisi yang Terlibat:</strong>
+                    <p>✓ Artistik</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal untuk Project 7 -->
+    <div id="modal7" class="modal" onclick="closeModal(7)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2>Prisma</h2>
+                <button class="close-btn" onclick="closeModal(7)">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img src="project7-foto.jpg" alt="Prisma" class="modal-image">
+                <div class="modal-section">
+                    <h3>Deskripsi</h3>
+                    <p>Film Pendek yang diproduksi untuk mengikuti ajang perlombaan dari HIMA PEDIA UPI dengan nama event "PEDITION 2026". Sebuah kolaborasi dengan universitas terkemuka.</p>
+                </div>
+                <div class="modal-section">
+                    <h3>Informasi</h3>
+                    <p><strong>Tahun:</strong> 2026</p>
+                    <p><strong>Event:</strong> PEDITION 2026 - HIMA PEDIA UPI</p>
+                    <p><strong>Status:</strong> Submitted</p>
+                </div>
+                <div class="divisi-list">
+                    <strong>Divisi yang Terlibat:</strong>
+                    <p>✓ Artistik<br>✓ Gaffer<br>✓ Direct Assist</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer>
         <p>&copy; 2026 - Irwansyah Portfolio. All rights reserved.</p>
     </footer>
+
+    <script>
+        function openModal(projectNumber) {
+            const modal = document.getElementById('modal' + projectNumber);
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(projectNumber) {
+            const modal = document.getElementById('modal' + projectNumber);
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal ketika tekan ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                for (let i = 1; i <= 7; i++) {
+                    closeModal(i);
+                }
+            }
+        });
+    </script>
 </body>
 </html>
